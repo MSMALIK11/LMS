@@ -1,0 +1,55 @@
+.my-learning {
+  margin-top: 4rem;
+}
+
+.my-learning h1 {
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+  color: tomato;
+}
+
+.my-learning span {
+  color: #82c3f4;
+}
+
+.learning-tab-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.learning-tab-button button {
+  border: none;
+  font-size: 1.5rem;
+  background-color: palevioletred;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-family: "Jost", sans-serif;
+  letter-spacing: 0.3rem;
+  -webkit-box-shadow: 0 1.6rem 2.4rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1.6rem 2.4rem rgba(0, 0, 0, 0.4);
+  margin: 2rem 1rem 2rem 1rem;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  border-radius: 1rem 0 10rem 0rem;
+  -webkit-border-radius: 1rem 0 10rem 0rem;
+  -moz-border-radius: 1rem 0 10rem 0rem;
+  -ms-border-radius: 1rem 0 10rem 0rem;
+  -o-border-radius: 1rem 0 10rem 0rem;
+}
+
+.learning-tab-button button:hover {
+  transform: translateY(-10%);
+  -webkit-transform: translateY(-10%);
+  -moz-transform: translateY(-10%);
+  -ms-transform: translateY(-10%);
+  -o-transform: translateY(-10%);
+}
+/*# sourceMappingURL=tabpannel.css.map */

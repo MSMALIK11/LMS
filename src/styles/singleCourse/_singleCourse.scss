@@ -1,0 +1,157 @@
+
+// single course 
+// topReghtcomponent
+// course by card
+
+.main-container {
+  position: relative;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+
+  & .start-btn {
+    color: #fff;
+    background-color: #222;
+
+    list-style-type: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    margin-right: 1rem;
+  }
+
+  & .course-baner {
+    height: 50vh;
+    background-size: cover;
+  }
+  & h3 {
+    margin-top: 4rem;
+  }
+  & .rating {
+    display: flex;
+    align-items: center;
+  }
+  & .course-title {
+    font-size: 2rem;
+    color: #fff;
+    line-height: 3rem;
+    font-family: sail;
+  }
+  & .rating-box {
+    font-weight: bold;
+    color: #000;
+  }
+  & .enroll {
+    display: none;
+  }
+  // course by card
+  & .course-buy-wraper {
+    padding: 2rem 1.4rem;
+  }
+
+  & .tutorial-video {
+    height: 14rem;
+    background-color: #444;
+    width: 100%;
+  }
+  & .start-your-course-btn {
+    text-align: center;
+    width: 90%;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  & .course-buy-container {
+    width: 25rem;
+    height: 80vh;
+    position: fixed;
+    right: 5%;
+    top: 15%;
+    background-color: #fff;
+
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
+
+    color: #222;
+    margin-bottom: 2rem;
+    & .course-buy-content {
+      ul {
+        list-style-type: none;
+        li {
+          margin: 0.5rem 0;
+          text-transform: capitalize;
+          color: #444;
+          font-size: 1rem;
+        }
+        i {
+          color: #34835e;
+          margin-right: 0.6rem;
+        }
+      }
+    }
+  }
+
+  .top-heading-wraper {
+    img {
+      width: 3rem;
+      background-color: #fff;
+
+      filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+      -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+      margin: 0 0.4rem;
+    }
+  }
+}
+
+
+.description-title
+{
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  margin: 1rem 0;
+}
+@media (max-width: 768px) {
+  .description-title{
+    font-size: 2rem;
+  }
+  .main-container {
+   margin-top: 5rem;
+    & .start-btn {
+      font-size: 1.2rem;
+      padding: 0.7rem 4rem;
+      background-color: crimson;
+    }
+    & .enroll {
+      display: block;
+    }
+  }
+}
+
+@media (max-width:1220px){
+  .course-buy-container{
+display: none;
+  }
+}
+@media (max-width:1300px){
+  .course-buy-container{
+right: 0;
+ width: 20rem;
+  }
+}
+// @media (max-width: 578px) {
+  
+//   .main-container {
+   
+//    margin-top: 5rem;
+//   }
+// }
+

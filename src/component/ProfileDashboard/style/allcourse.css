@@ -1,0 +1,77 @@
+.all-course-cards {
+  -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.all-course-cards img {
+  width: 100%;
+  height: 100%;
+}
+
+.all-course-cards .course-img {
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.all-course-cards .start-icon {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+}
+
+.all-course-cards .start-icon .bi {
+  color: #fff;
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  font-size: 4rem;
+}
+
+.all-course-cards .start-icon {
+  transition: 0.3s 200ms;
+  -webkit-transition: 0.3s 200ms;
+  -moz-transition: 0.3s 200ms;
+  -ms-transition: 0.3s 200ms;
+  -o-transition: 0.3s 200ms;
+}
+
+.all-course-cards:hover > .course-img .start-icon {
+  opacity: 1;
+  -webkit-box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+}
+
+.all-course-cards .progress {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.all-course-cards .progress-bar {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(blue), to(black));
+  background-image: linear-gradient(to left, blue, black);
+  color: #fff;
+}
+/*# sourceMappingURL=allcourse.css.map */

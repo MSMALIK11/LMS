@@ -1,0 +1,54 @@
+
+
+// tab options css
+.tabButton{
+    display: flex;
+    flex-direction: column;
+}
+.tabButton button{
+    border: none;
+    padding: 2rem 1rem;
+    margin: 0.5rem;
+    width: 10rem;
+    border-radius:20px 300px 200px;
+    -webkit-border-radius:20px 300px 200px;
+    -moz-border-radius:20px 300px 200px;
+    -ms-border-radius:20px 300px 200px;
+    -o-border-radius:20px 300px 200px;
+    background-color:palevioletred;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow:0rem 0rem 1rem  rgba(0,0,0,0.3);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.tabButton button:hover{
+    box-shadow:0rem 0.2rem 1rem  rgba(0,0,0,0.3);
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+    background-color:rgb(218, 79, 125);
+}
+
+
+
+@media(max-width:929px) {
+    .tabButton button{
+        width: 8rem;
+    }
+    
+    .tabButton{
+        display: inline;
+    }
+
+    
+}
+
+

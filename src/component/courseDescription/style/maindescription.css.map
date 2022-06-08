@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,2BAA2B,CAAC;EAC1B,KAAK,EAAE,IAAI;CAYZ;;AAbD,AAGE,2BAHyB,CAGvB,kBAAkB,CAAC;EACnB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;CAClB;;AANH,AAOE,2BAPyB,CAOvB,CAAC,CAAC;EACF,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,SAAS;CAE1B;;AAGH,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AAAA,2BAA2B,CAAA;IACzB,KAAK,EAAE,IAAI;GACZ",
+    "sources": [
+        "maindescription.scss"
+    ],
+    "names": [],
+    "file": "maindescription.css"
+}

@@ -1,0 +1,36 @@
+.c-box {
+  position: relative;
+}
+
+.c-box h3:hover {
+  text-decoration: underline;
+  color: #99e723;
+}
+
+.c-box .coming-soon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(17, 17, 17, 0.171);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.c-box .coming-soon img {
+  width: 3rem;
+}
+/*# sourceMappingURL=trendingCourse.css.map */

@@ -1,0 +1,25 @@
+@import "../variables/variables";
+@import "./Navbar/_navbbar";
+@import './topBanner/_banner';
+@import "./courseplayer/index";
+@import './coursetab/courseTab';
+@import './categories/_category';
+@import './taboption/tabOption';
+@import './courseCard/_card';
+@import "./singleCourse/_singleCourse";
+@import "./courseDetails/player";
+@import "./courseDetails/courseTopRightDetails";
+@import "./common/common.scss";
+@import "./courseStructure/courseStructure";
+@import "./studentfeedback/studentfeedback";
+@import "./coursereviews/courseReviews";
+@import './sidebar/sidebar';
+@import './CreateCourse/addNewCourse';
+
+
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Jost', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Baloo Da 2', cursive;
+

@@ -1,0 +1,77 @@
+.blog-wraper {
+  padding: 0rem 10rem;
+}
+
+.blog-wraper ul li {
+  list-style-type: none;
+  padding: 0.3rem 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #222;
+  letter-spacing: 0.125rem;
+}
+
+.blog-wraper ul li span {
+  color: orange;
+  margin-right: 1rem;
+}
+
+.post-wraper {
+  margin: 1rem 0;
+}
+
+.post-wraper .card {
+  border-radius: 1rem;
+  -webkit-border-radius: 1re;
+  -moz-border-radius: 1re;
+  -ms-border-radius: 1re;
+  -o-border-radius: 1re;
+}
+
+.post-wraper .user-info img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 0.3rem solid #fff;
+  -webkit-box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.post-wraper .post-details {
+  margin-bottom: 1rem;
+}
+
+.post-wraper .post-details ul li {
+  padding: 0 0.5rem;
+}
+
+.post-wraper .post-details ul li:hover {
+  background-color: pink;
+}
+
+.post-wraper .right button {
+  background-color: #f3f3f3;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  outline: none;
+  border: none;
+  padding: 0.425rem 0.8625rem;
+}
+
+.post-wraper .heart .left p {
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .blog-wraper {
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=blog.css.map */

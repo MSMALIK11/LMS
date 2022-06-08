@@ -1,0 +1,143 @@
+.hamburger-menu{
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  box-shadow: 0rem 0rem 2rem rgba(0,0,0,0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+
+    & .bar
+{
+     width: 80%;
+    height:0.3rem;
+    background: #444;
+    
+
+
+ }
+ & :nth-child(2){
+     margin: 0.4rem;
+ }
+}
+
+// html tab button 
+
+.htmltab{
+    background-color:#f9f9f9;
+    height: 100vh;
+
+   position: fixed;
+   overflow-y:scroll;
+   width: 17rem;
+   
+
+  
+
+& .inner-tab{
+    padding: 1rem 1.5rem;
+
+}
+    & button{
+          background-color: transparent;
+          border: none;
+          color:#222;
+          margin: 0.5rem 0;
+          width: 100%;
+          padding: 0.4rem 1rem;
+          font-size: 1.2rem;
+          font-weight: 500;
+          text-align: left;
+          text-transform: capitalize;
+          transition:0.2s ease-in ;
+          -webkit-transition:0.2s ease-in ;
+          -moz-transition:0.2s ease-in ;
+          -ms-transition:0.2s ease-in ;
+          -o-transition:0.2s ease-in ;
+         
+       
+
+}
+      & .btn{
+         
+          border:0;
+
+      }
+
+      & button:hover{
+        
+          color:#fff;
+          padding-left: 0.4rem;
+          background-color:aqua;
+      }
+    
+
+}
+
+.hamburger-menu:hover{
+ transform: scale(1.1);
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+ -o-transform: scale(1.1);
+}
+
+
+
+// @media (max-width:678px){
+//     .htmltab{
+//         display: none;
+//     }
+// }
+
+
+// html home page split css
+
+.homepage-wraper{
+   display: flex;
+
+   & .left-side-bar{
+       width:15rem ;
+       margin-right: 2rem;
+       
+   }
+
+   & .right-side-content{
+       padding:0rem 2rem;
+       width: 70%;
+    //    background-color:whitesmoke;
+
+       
+   }
+
+
+}
+
+@media (max-width:678px){
+    .htmltab,.left-side-bar{
+        display: none;
+    }
+    .hamburger-menu{
+        opacity: 1;
+        visibility: visible;
+     
+     
+    
+    }
+    
+    .homepage-wraper .right-side-content{
+        padding:0 0.5rem;
+        width: 100%;
+    
+ 
+        
+    }
+}
+

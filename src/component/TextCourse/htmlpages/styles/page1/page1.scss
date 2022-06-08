@@ -1,0 +1,40 @@
+
+.page-box{
+    padding: 0;
+    height: auto;
+
+    & .box-card{
+        background-color: #fff;
+        // box-shadow: 0rem 0rem 2rem rgba(0,0,0,0.2);
+        padding: 1rem 2rem;
+    
+    }
+
+    & .content-box{
+        background-color: #f3e9e9d0;
+        padding: 0rem 0.5rem;
+        
+    }
+    & .inner-box{
+        background-color: #ffffff;
+        padding:2rem 1rem;
+        border-left: 0.4rem solid  orange;
+        box-shadow: 0rem 0rem 2rem rgba(0,0,0,0.2);
+
+    }
+    & h4{
+        padding: 1rem 0;
+    }
+    & p{
+        padding: 0.5rem 0;
+        line-height: 2.5rem;
+       
+
+        
+    }
+
+}
+
+.copyright{
+    background-color: red;
+}

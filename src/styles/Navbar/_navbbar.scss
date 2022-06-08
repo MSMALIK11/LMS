@@ -1,0 +1,186 @@
+header {
+  background-color:rgba(255,255,255,0);
+  backdrop-filter: blur(30px);
+  z-index: 9999 !important;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.head {
+  z-index: 999;
+}
+.navbar-brand h1 {
+  color: orange;
+
+  font-family: "Baloo Da 2", cursive;
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  & span {
+    color: #9b0e0e;
+  }
+}
+header p {
+  position: absolute;
+  display: block;
+  color: orange;
+  top: 4.5rem;
+  left: 15%;
+  line-height: 1rem;
+  text-align: right;
+  font-family: "Dancing Script", cursive;
+  text-transform: capitalize;
+  letter-spacing: 0.2rem;
+}
+header .nav-item .avatarimg {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+header .nav-item .nav-link {
+  cursor: pointer;
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
+  margin: 0 0.5rem !important;
+ 
+
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+ 
+}
+header .nav-item .nav-link:hover {
+  border-bottom: 0.2rem solid orange;
+}
+
+.nabar-toggler,
+.navbar-toggler-icon {
+  z-index: 999 !important;
+}
+.navbar-toggler{
+ position: absolute;
+ right: 1em;
+ top: 1.7rem;
+}
+
+// modal
+.modal {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  & .input-wraper {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 0.5rem 2rem;
+    border: none;
+    outline: none;
+    box-shadow: 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    & .icons {
+      font-size: 1.5rem;
+    }
+  }
+  & input {
+    background-color: #fff;
+    border: "5rem solid red" !important;
+    outline: 0;
+    border: none;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  & input:focus {
+    border: none;
+    box-shadow: none;
+  }
+  & .signinbtn {
+    border: none;
+    padding: 0.4rem 8rem;
+    background-color: #9b0e0e;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+  }
+  & .signinbtn:hover {
+    background-color: green;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  }
+}
+.modal-backdrop {
+  z-index: 0 !important;
+}
+
+.modal .modal-content {
+  background-color: #eee;
+  width: 50rem;
+
+  & .modal-body {
+    padding: 3rem 2rem;
+
+    & .left {
+      width: 100%;
+      height: 30vh;
+    }
+  }
+
+  .google-login {
+    text-align: center;
+    margin-top: 4rem;
+    button {
+      background-color: palegoldenrod;
+      width: 18rem;
+      height: 4rem;
+      margin: 0.4rem 0;
+      border: none;
+      border-radius: 3rem;
+      -webkit-border-radius: 3rem;
+      -moz-border-radius: 3rem;
+      -ms-border-radius: 3rem;
+      -o-border-radius: 3rem;
+      outline: none;
+      text-align-last: center;
+      text-justify: a;
+
+      .bi {
+        font-size: 1rem;
+        color: black;
+        margin-right: 0.8625rem;
+      }
+    }
+  }
+}
+
+form .cursor {
+  cursor: pointer;
+}
+
+
+@media(max-width:768px){
+  .navbar-brand h1{
+    font-size: 1.5rem;
+  }
+  header p{
+    font-size: 1.1rem;
+    top: 4rem;
+  }
+}

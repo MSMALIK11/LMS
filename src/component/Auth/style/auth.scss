@@ -1,0 +1,35 @@
+.signup-wraper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 87vh;
+
+  position: relative;
+  z-index: 999;
+  ::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-image: url(../authimage/signup-img.svg);
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  form {
+    margin-top: 3rem;
+    width: 30rem;
+    background-color: #ffffff;
+    height: 30rem;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+}

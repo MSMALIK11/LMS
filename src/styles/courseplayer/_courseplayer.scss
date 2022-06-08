@@ -1,0 +1,14 @@
+
+.wraper{
+    padding: 0 1rem 2rem 3rem;
+    & .react-player{
+        width: 100%;
+        height: 30rem;
+    }
+
+}
+.wraper h1{
+    font-size: 2rem;
+    color:#555;
+    font-weight: 400;
+}

@@ -1,0 +1,51 @@
+// .lac-wraper{
+//     display: flex;
+//     align-items: center;
+//     text-transform: capitalize;
+   
+    
+//     & .lac-title{
+//         cursor: pointer;
+//     }
+
+    
+// }
+// .accordion-button{
+//     background-color: #fff !important;
+// }
+// .accordion-button:focus{
+//     border-color:0 !important;
+//     box-shadow: 0 !important;
+// }
+
+.con-wraper{
+    background-color: rgb(0,7,61);
+    padding: 2rem 4rem 3rem 2rem;
+
+height: 100vh;
+overflow-y:auto ;
+
+}
+
+
+
+.content-title{
+color:#FFFFFF;
+text-transform: capitalize;
+font-weight: bold;
+
+
+margin: 0;
+
+}
+
+
+
+.contentLink .content-item.active{
+    background-color: rgb(45,51,89);
+}
+.contentLink .content-item:hover{
+   background-color: rgb(45,51,89);
+
+
+}

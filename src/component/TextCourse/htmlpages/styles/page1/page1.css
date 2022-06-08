@@ -1,0 +1,36 @@
+.page-box {
+  padding: 0;
+  height: auto;
+}
+
+.page-box .box-card {
+  background-color: #fff;
+  padding: 1rem 2rem;
+}
+
+.page-box .content-box {
+  background-color: #f3e9e9d0;
+  padding: 0rem 0.5rem;
+}
+
+.page-box .inner-box {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  border-left: 0.4rem solid  orange;
+  -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.page-box h4 {
+  padding: 1rem 0;
+}
+
+.page-box p {
+  padding: 0.5rem 0;
+  line-height: 2.5rem;
+}
+
+.copyright {
+  background-color: red;
+}
+/*# sourceMappingURL=page1.css.map */

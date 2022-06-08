@@ -1,0 +1,48 @@
+.slider-wraper {
+  position: relative;
+}
+
+.slider-wraper .carousel .slider-button {
+  position: absolute;
+  top: -1rem;
+  left: 84%;
+}
+
+.slider-wraper .carousel .slider-button button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 3rem;
+}
+
+.slider-wraper .carousel-inner {
+  height: 30rem;
+  margin-bottom: 3rem;
+  padding: 4rem 3rem 0 3rem;
+}
+
+.slider-wraper .carousel-inner .card {
+  height: 20rem;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+
+.slider-wraper .carousel-inner .card .card-title {
+  font-size: 1.4rem;
+}
+
+.slider-wraper .carousel-control-prev,
+.slider-wraper .carousel-control-next {
+  background-color: red;
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  right: 0;
+  display: block;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/*# sourceMappingURL=carousel.css.map */

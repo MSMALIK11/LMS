@@ -1,0 +1,50 @@
+.sidebar-container{
+    background-color: rgb(0,7,61);
+    color: #fff;
+
+height: 100vh;
+position: relative;
+
+& .nav-link-wraper{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top:1rem ;
+    
+    
+    
+}
+& .nav-link-wraper:hover{
+    
+       border-right: 0.3rem solid #fff;
+      background-color: rgb(45,51,89);
+    
+}
+.active{
+      border-right: 0.3rem solid #fff;
+       background-color: rgb(45,51,89);
+
+}
+& .icon{
+    font-size: 1.7rem;
+    color: #fff;
+}
+& .route-text{
+    font-size: 1.4rem;
+    color: #fff;
+    text-transform: capitalize;
+    transition: all 0.4s ;
+    -webkit-transition: all 0.4s ;
+    -moz-transition: all 0.4s ;
+    -ms-transition: all 0.4s ;
+    -o-transition: all 0.4s ;
+}
+
+& .toggle-menu{
+    position: absolute;
+    right: 3%;
+    font-size: 1.5rem;
+
+}
+
+}

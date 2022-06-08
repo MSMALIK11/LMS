@@ -1,0 +1,113 @@
+.single-wraper {
+  padding: 0rem 2rem 0 8rem;
+  background-color: #f8f8f2;
+}
+
+.single-wraper .single-box .right-box .card {
+  position: fixed;
+}
+
+.single-wraper .single-box .right-box .card button {
+  border: none;
+  background-color: #1212e6;
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 1rem 1rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  text-transform: capitalize;
+  padding: 0.5rem 0.3rem;
+}
+
+.single-wraper .single-box .right-box .dark {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #222;
+}
+
+.single-wraper .single-box .right-box .author-wraper {
+  margin-top: -1rem;
+  padding: 0rem 1rem;
+}
+
+.single-wraper .single-box .right-box .author-wraper h3 {
+  font-size: 1.5rem;
+}
+
+.single-wraper ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+}
+
+.single-wraper ul li {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.single-wraper ul li span {
+  font-size: 2rem;
+}
+
+.single-wraper ul li:hover {
+  background-color: rgba(255, 0, 0, 0.781);
+}
+
+.single-wraper .single-post {
+  background-color: #ffffff;
+  border: 0.3rem solid #f3f3f3;
+}
+
+.single-wraper .single-post img {
+  width: 100%;
+}
+
+.single-wraper .single-post .user-info img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 0.2rem solid #fff;
+  -webkit-box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.single-wraper .author-info img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .single-wraper {
+    padding: 0 1rem;
+  }
+}
+/*# sourceMappingURL=singlepost.css.map */

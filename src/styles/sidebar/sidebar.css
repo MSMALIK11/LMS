@@ -1,0 +1,50 @@
+.sidebar-container {
+  background-color: #00073d;
+  color: #fff;
+  height: 100vh;
+  position: relative;
+}
+
+.sidebar-container .nav-link-wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.sidebar-container .nav-link-wraper:hover {
+  border-right: 0.3rem solid #fff;
+  background-color: #2d3359;
+}
+
+.sidebar-container .active {
+  border-right: 0.3rem solid #fff;
+  background-color: #2d3359;
+}
+
+.sidebar-container .icon {
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.sidebar-container .route-text {
+  font-size: 1.4rem;
+  color: #fff;
+  text-transform: capitalize;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+
+.sidebar-container .toggle-menu {
+  position: absolute;
+  right: 3%;
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=sidebar.css.map */

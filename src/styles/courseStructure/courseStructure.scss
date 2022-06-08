@@ -1,0 +1,59 @@
+.course-structure-container {
+  width: 50vw;
+
+  & .accourian-container {
+    & .accordian-item {
+      background-color: papayawhip;
+      position: relative;
+      & .accordian-title {
+        color: #000;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+      & .accordian-icon {
+        width: 2rem;
+        height: 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        top: 20%;
+        bottom: 0;
+        transform: translate(-50%, 15%);
+        -webkit-transform: translate(-50%, 15%);
+        -moz-transform: translate(-50%, 15%);
+        -ms-transform: translate(-50%, 15%);
+        -o-transform: translate(-50%, 15%);
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+        border: 1px solid #7d7d7d74;
+        transition: all 0.4s ease-in;
+        -webkit-transition: all 0.4s ease-in;
+        -moz-transition: all 0.4s ease-in;
+        -ms-transition: all 0.4s ease-in;
+        -o-transition: all 0.4s ease-in;
+      }
+    }
+    & .accordian-body {
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+      transition: all 2s ease-in;
+      -webkit-transition: al 2s ease-in;
+      -moz-transition: al 2s ease-in;
+      -ms-transition: al 2s ease-in;
+      -o-transition: al 2s ease-in;
+    }
+  }
+}
+
+@media (max-width:1220px) {
+  .course-structure-container {
+    width: 90vw;
+  }
+}

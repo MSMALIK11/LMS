@@ -1,0 +1,21 @@
+.main-description-container {
+  width: 50vw;
+
+  & .description-title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  & p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: 0.0124rem;
+   
+  }
+}
+
+@media (max-width:992px) {
+  .main-description-container{
+    width: 90vw;
+  }
+  
+}
