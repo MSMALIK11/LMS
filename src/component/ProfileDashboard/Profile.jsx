@@ -9,14 +9,11 @@ import img2 from "./images/p-2.svg";
 
 import { Context } from "../context";
 import { getUserInfo } from "../API/api";
-
+import { useSelector } from "react-redux";
 
 const Profile = () => {
-
- const { state, dispatch } = useContext(Context);
-
- const {user}=state.user;
- console.log('user',user)
+const {loading,user} = useSelector((state)=>state.user)
+ console.log('users',user)
 
   // useEffect(() => {
   //   const {token}=JSON.parse(window.localStorage.getItem('user'))

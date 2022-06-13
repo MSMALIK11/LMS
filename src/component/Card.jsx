@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 
@@ -11,27 +11,39 @@ import content from "./videoscontent";
 import { useNavigate } from "react-router-dom";
 import Loading from "./common/Loading";
 import lock from '../images/lock.png';
+import Dailoag from "./coursePreviewDialog/Dailoag";
+
 const Card = () => {
  
-  
+  const [preview,setPreview]=useState(null)
 
   const navigate = useNavigate();
 
- 
+  const handleHover=(item)=>{
+    setPreview(item)
+  }
+
   return (
     <>
       {/* <div className="heading-wraper  mt-5 ms-4"></div> */}
       {content === null ? (
         <Loading />
       ) : (
-        <div className="row">
+        <div className="row relative">
           {content.courses.map((course, index) => {
             return (
               <div
                 key={course.id + index}
-                className="col-sm-12 col-md-6 col-lg-4"
+                className="col-sm-12 col-md-6 col-lg-4 "
               >
-                <div className="card my-4 rounded shadow v-course">
+                <div
+                  className="card my-4 rounded shadow v-course"
+                  onMouseEnter={() => handleHover(course)}
+                  onMouseLeave={() => handleHover(null)}
+                >
+                  {preview && preview.id == course.id && (
+                    <Dailoag course={course} />
+                  )}
                   {course.active == true ? (
                     ""
                   ) : (

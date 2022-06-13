@@ -29,30 +29,4 @@
     }
   }
 
-  .top-box-container {
-    .shadow-box {
-      padding: 3rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
-    img {
-      width: 6rem;
-    }
-    .new {
-      background-color: orange;
-      color: #ffffff;
-      text-align: center;
-      width: 6rem;
-      height: 3rem;
-
-      line-height: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
 }

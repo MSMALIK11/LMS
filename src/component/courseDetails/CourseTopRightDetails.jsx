@@ -57,7 +57,7 @@ const CourseTopRightDetails = ({ course, classTitle }) => {
            
             <button
               onClick={() =>
-                navigate(`/course/${course.title}/${classTitle[0]}`, {
+                navigate(`course/${course.title}/${classTitle[0]}`, {
                   state: { courses: course },
                 })
               }

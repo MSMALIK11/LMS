@@ -27,7 +27,7 @@ const Sidebar = ({ routes }) => {
   };
 
   return (
-    <div className=" mt-4 d-flex ">
+    <div className=" d-flex ">
       <motion.div
         animate={{
           width: isOpen ? "250px" : "50px",
@@ -37,13 +37,13 @@ const Sidebar = ({ routes }) => {
             damping: 8,
           },
         }}
-        className="sidebar-container padding-top-sm "
+        className="sidebar-container "
       >
         <AiOutlineMenuUnfold
-          className="toggle-menu mt-3"
+          className="toggle-menu"
           onClick={() => setIsOpen(!isOpen)}
         />
-        <section className="route p-1 mt-5  ">
+        <section className="route p-1 mt-3  ">
           {routes &&
             routes.map((route, i) => (
               <NavLink

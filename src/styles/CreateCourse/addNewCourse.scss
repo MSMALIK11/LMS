@@ -5,14 +5,19 @@
 .create-course-container{
    
     width: 100%;
-    max-height: 100vh;
-    height: auto;
-    margin-top: 8rem;
+ 
+
+  
+    margin-top: 2rem;
 
 margin-bottom: 10rem;
+
+height: 110rem;
+
     & form{
         display: flex;
         flex-direction: column;
+       
     }
 
 }
@@ -118,6 +123,7 @@ margin-bottom: 10rem;
    -o-border-radius: 1rem;
    color: #fff;
    margin: 1.3rem 0;
+   width: 20rem;
 }
 .add-lesson-button.active{
     background-color: #eee;

@@ -5,7 +5,7 @@ import CourseCard from "./CourseCard";
 
 const HomeCard = () => {
   return (
-    <div className="card-header ">
+    <div className="card-header margin-top">
       <div className="row">
         <div className="col-lg-3 course-left-category">
           <Category />

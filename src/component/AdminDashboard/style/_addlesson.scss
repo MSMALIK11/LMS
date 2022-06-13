@@ -1,0 +1,79 @@
+.add-lesson-wraper{
+   width: 50%;
+
+margin: 2rem 3rem;
+    & .add-new-lesson-title{
+font-size: 2rem;
+
+    }
+
+    & .media-box{
+      
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        min-height: 15rem;
+        padding: 3rem 0;
+
+        & button{
+           background-color: transparent;
+           border:2px solid $green;
+           outline: none;
+           font-size: 1.5rem;
+           width: 10rem;
+           height: 3rem;
+           color: $green;
+           border-radius:10px ;
+           -webkit-border-radius:10px ;
+           -moz-border-radius:10px ;
+           -ms-border-radius:10px ;
+           -o-border-radius:10px ;
+           transition: all 400ms ease-out;
+           -webkit-transition: all 400ms ease-out;
+           -moz-transition: all 400ms ease-out;
+           -ms-transition: all 400ms ease-out;
+           -o-transition: all 400ms ease-out;
+}
+       
+    }
+
+    & .icon{
+        font-size: 2.5rem;
+        color: $green;
+        border:2px solid $green;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:all 40ms ease-out ;
+        -webkit-transition:all 40ms ease-out ;
+        -moz-transition:all 40ms ease-out ;
+        -ms-transition:all 40ms ease-out ;
+        -o-transition:all 40ms ease-out ;
+}
+.icon:hover{
+    background-color:$green;
+    color: #fff;
+}
+button:hover{
+    background-color: $green;
+    color: #fff;
+}
+   
+  
+}
+
+@media (max-width:768px){
+    .add-lesson-wraper{
+        width: 90%;
+    }
+
+}

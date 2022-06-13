@@ -4,12 +4,12 @@ const InputBox = ({
   handleChange,
   name,
  
-  titleValue,text,
+  titleValue,text,label="label",
   title = false,
 }) => {
   return (
     <div className="input-box-wraper">
-      <label htmlFor="">Course Title *</label>
+      <label htmlFor="">{label && label}*</label>
       <div className="input-box-element">
         <input
           type="text"

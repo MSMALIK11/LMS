@@ -3,6 +3,7 @@ import {
   addLesson,
   addNewCourse,
   deleteLessons,
+  demo,
   getAdminAllCourse,
 } from "../controller/courseController.js";
 import {
@@ -23,9 +24,10 @@ router.route("/profile").get(isAuthenticated, currentUser);
 // course route
 
 router.route("/course/add").post(isAuthenticated, addNewCourse);
-router.route("/course/get").get(isAuthenticated, getAdminAllCourse);
-router.route("/course/lesson/:slug").post(isAuthenticated, addLesson);
+router.route("/course/instructor").get(isAuthenticated, getAdminAllCourse);
+router.route("/course/lesson/add/:id").post(isAuthenticated, addLesson);
 // dcelete lessons
-router.route("/course/lesson/:id").delete(isAuthenticated,deleteLessons);
+router.route("/course/lesson/:id/:lessonId").delete(isAuthenticated,deleteLessons);
+router.route('/demo').post(demo)
 
 export default router;

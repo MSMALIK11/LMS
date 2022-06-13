@@ -39,16 +39,16 @@ const SongleCourse = () => {
   return (
     <div className="main-container ">
      
-      <div className="bg-dark position-relative">
+      <div className=" main-wraper position-relative">
         {/* course free  price card */}
         <CourseByCard course={course} classTitle={classTitle} />
         <div className="container pb-4">
-          <div className="row d-flex">
-            <div className="col-sm-12 col-md-12 col-lg-6   order-lg-first order-md-last order-sm-last ">
+          <div className="row d-flex ">
+            <div className="col-sm-12 col-md-12 col-lg-6   order-lg-first order-md-last order-sm-last order-xs-last">
               {/* <ReactVideoPlayer videoLink={course.lacture[0].link} /> */}
               <CourseTopRightDetails course={course} classTitle={classTitle} />
             </div>
-            <div className="col-sm-12 col-md-12 col-lg-6  order-lg-last order-md-first  order-sm-first ">
+            <div className="col-sm-12 col-md-12 col-lg-6  order-lg-last order-md-first  order-sm-first  ">
               <div className="d-sm-block d-md-block d-lg-none">
                 <ReactVideoPlayer videoLink={course.lacture[0].link} />
               </div>

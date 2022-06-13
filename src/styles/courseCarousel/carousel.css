@@ -1,5 +1,6 @@
 .slider-wraper {
   position: relative;
+  background-color: red;
 }
 
 .slider-wraper .carousel .slider-button {

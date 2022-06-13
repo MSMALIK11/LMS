@@ -1,0 +1,68 @@
+// instructor course card desing
+// instructor welcome component desing
+
+.admin-card-wraper {
+  & .admin-course-card {
+    height: 20rem;
+    position: relative;
+
+    & .badge-custom-class {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 5rem;
+      height: 2rem;
+      background-color: crimson;
+      text-align: center;
+      color: #fff;
+      text-transform: capitalize;
+      border-radius:5px ;
+      -webkit-border-radius:5px ;
+      -moz-border-radius:5px ;
+      -ms-border-radius:5px ;
+      -o-border-radius:5px ;
+}
+
+    & img {
+      height: 14rem;
+      object-fit: cover;
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+    }
+  }
+}
+
+
+.welcome-instructor{
+background-color: $sidebar-color;
+height: 4rem;
+display: flex;
+align-items: center;
+
+color: #fff;
+padding-left: 45px;
+gap: 2rem;
+
+& .welcome-icon{
+  font-size: 2rem;
+  border: 2px solid #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+& .instructor-name{
+  font-weight: bold;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+
+
+}

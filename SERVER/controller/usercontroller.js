@@ -5,11 +5,7 @@ import jwt from "jsonwebtoken";
 export const signup = async (req, res) => {
   const { name, email, password, phone } = req.body;
 
-  if (!name || !email || !password) {
-    return res
-      .status(401)
-      .json({ status: false, message: "all fields are required" });
-  }
+  if (!name || !email || !password)  return;
   try {
     const exist = await User.findOne({ email });
     if (exist) {
@@ -27,16 +23,15 @@ export const signup = async (req, res) => {
       phone: phone,
     });
 
-    const save = await user.save();
-    if (save) {
-      return res.status(200).json({
+    await user.save();
+     return res.status(200).json({
         status: true,
         message: "user successfully signup in database",
-        data: save,
+        data: user,
       });
-    } else {
-      return res.status(401).json({ status: false, message: "login denied.." });
-    }
+    
+
+   
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
@@ -49,16 +44,14 @@ export const signup = async (req, res) => {
 export const userLogin = async (req, res) => {
   const { email, password } = req.body;
   console.log(email, password);
-  if (!email || !password) {
-    res.status(400).json({ message: "email or password required" });
-  }
+  // if (!email || !password) {
+  //   return res.status(400).json({ message: "email or password required" });
+  // }
   try {
     const user = await User.findOne({ email });
  
 
-    if (!user) {
-      res.json({ message: "invalid email...." });
-    }
+    if (!user) return
 
     const match = await bcrypt.compare(password, user.password);
  
@@ -69,17 +62,17 @@ export const userLogin = async (req, res) => {
      };
 
 
-    console.log(token);
+   
     if (match) {
       user.password = undefined;
          return res
            .status(200)
            .cookie("token", token, options)
-           .json({ success: true, user, token });
+           .json({ success: true, user, token ,message:'login successfully completed'});
     } else {
-      res.status(400).json({ message: "password not match" });
+      return res.status(400).json({ error: "password not match" });
     }
-    res.status(200).json({ user: user, token: token });
+ 
   } catch (error) {
     res.status(500).json({
       status: false,
@@ -91,7 +84,7 @@ export const userLogin = async (req, res) => {
 
 export const userLogout = async (req, res) => {
   res.clearCookie("jwt");
-  return res.json({ message: "signout success" });
+  return res.json({ message: "Logout success" });
 };
 
 

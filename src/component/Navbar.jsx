@@ -18,6 +18,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { userSignup, userLogin, userLogout } from "./API/api";
 import { Context } from "./context";
+import { userLoginAction } from "../Store/Actions/userAction";
+import {useDispatch} from 'react-redux';
+import { useCookies } from "react-cookie";
+
 
 const accountInitialValues = {
   login: {
@@ -45,7 +49,9 @@ const Navbar = () => {
   const [user, setUser] = useState(userinitialValues);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
-
+  const [navActive,setNavActive]=useState("Home");
+   const [cookies, setCookie] = useCookies(["token"]);
+const dispatch=useDispatch();
   const toggleAccount = () => {
     setAccount(accountInitialValues.login);
   };
@@ -54,6 +60,7 @@ const Navbar = () => {
     setAccount(accountInitialValues.signup);
   };
 
+  const users=null;
   let name, value;
   const getUserData = (e) => {
     name = e.target.name;
@@ -63,8 +70,8 @@ const Navbar = () => {
   const handleClose = () => setShow(!show);
   // context
 
-  const { state, dispatch } = useContext(Context);
-  const users = state.user;
+  // const { state,  } = useContext(Context);
+  // const users = state.user;
   // console.log("user state", users);
 
   // sign up
@@ -95,20 +102,13 @@ const Navbar = () => {
 
   const userLoginHandle = async (e) => {
     e.preventDefault();
-    let res = await userLogin(user);
+    // let res = await userLogin(user);
 
-    dispatch({
-      type: "LOGIN",
-      payload: res,
-    });
-    window.localStorage.setItem("user", JSON.stringify(res));
-
-    toast.success(<div>Congratulations login successfully</div>, {
-      position: "top-center",
-      autoClose: 4000,
-    });
+    dispatch(userLoginAction(user));
+    const token = JSON.parse(window.localStorage.getItem("token"));
+    setCookie("token", token);
     setShow(!show);
-    navigate("/course");
+    navigate("/course", { replace: true });
   };
   // logout
   const logout = async () => {
@@ -172,26 +172,35 @@ const Navbar = () => {
             </a>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto  text-center mt-sm-5 mt-lg-0 ">
-                <li className="nav-item ">
-                  
-                    <Link to="/" className="link nav-link ">
-                      Home
-                    </Link>
-                 
+                <li
+                  className={`nav-item  ${
+                    navActive === "Home" ? "navActive" : ""
+                  }`}
+                  onClick={() => setNavActive("Home")}
+                >
+                  <Link to="/" className="link nav-link ">
+                    Home
+                  </Link>
                 </li>
-                <li className="nav-item">
-                
-                    <Link to="course" className="link nav-link">
-                      Course
-                    </Link>
-                
+                <li
+                  className={`nav-item  ${
+                    navActive === "Course" ? "navActive" : ""
+                  }`}
+                  onClick={() => setNavActive("Course")}
+                >
+                  <Link to="course" className="link nav-link">
+                    Course
+                  </Link>
                 </li>
-                <li className="nav-item">
-                
-                    <Link to="/dashboard/profile" className="link nav-link">
-                      admin
-                    </Link>
-                
+                <li
+                  className={`nav-item  ${
+                    navActive === "Admin" ? "navActive" : ""
+                  }`}
+                  onClick={() => setNavActive("Admin")}
+                >
+                  <Link to="/dashboard/profile" className="link nav-link">
+                    admin
+                  </Link>
                 </li>
                 {/* <li className="nav-item">
                  
@@ -200,15 +209,16 @@ const Navbar = () => {
                     </Link>
                  
                 </li> */}
-                <li className="nav-item">
-                
-                    <Link to="/admin" className=" nav-link">
-                      Profile
-                    </Link>
-                
+                <li
+                  className={`nav-item  ${
+                    navActive === "Profile" ? "navActive" : ""
+                  }`}
+                  onClick={() => setNavActive("Profile")}
+                >
+                  <Link to="/admin" className=" nav-link">
+                    Profile
+                  </Link>
                 </li>
-
-               
 
                 {users === null && (
                   <>
@@ -230,9 +240,7 @@ const Navbar = () => {
                 {users !== null && (
                   <>
                     <li className="nav-item " onClick={logout}>
-                      <a className="nav-link">
-                       Logout
-                      </a>
+                      <a className="nav-link">Logout</a>
                     </li>
                   </>
                 )}
@@ -240,7 +248,10 @@ const Navbar = () => {
                   <>
                     <li className="nav-item ">
                       <a className="nav-link">
-                        <span className="link text-capitalize fs-5"> Hi MR.'</span>
+                        <span className="link text-capitalize fs-5">
+                          {" "}
+                          Hi MR.'
+                        </span>
                       </a>
                     </li>
                   </>
@@ -275,9 +286,9 @@ const Navbar = () => {
                         )} */}
                       </div>
                       <li>
-                        
-                          <Link to="/admin" className="dropdown-item">profile</Link>
-                        
+                        <Link to="/admin" className="dropdown-item">
+                          profile
+                        </Link>
                       </li>
                       <li>
                         <a className="dropdown-item" href="#">

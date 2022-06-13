@@ -1,49 +1,22 @@
-.lac-wraper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-transform: capitalize;
-}
-
-.lac-wraper .lac-title {
-  cursor: pointer;
-}
-
-.accordion-button {
-  background-color: #fff !important;
-}
-
-.accordion-button:focus {
-  border-color: 0 !important;
-  -webkit-box-shadow: 0 !important;
-          box-shadow: 0 !important;
-}
-
 .con-wraper {
+  background-color: #00073d;
   padding: 2rem 4rem 3rem 2rem;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-.con-item ul {
-  list-style-type: none;
-  position: relative;
-}
-
-.con-item ul li {
-  font-size: 2rem;
+.content-title {
+  color: #FFFFFF;
   text-transform: capitalize;
-  border-bottom: 0.2rem solid transparent;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+  font-weight: bold;
+  margin: 0;
 }
 
-.con-item ul li:hover {
-  border-bottom: 0.2rem solid orange;
+.contentLink .content-item.active {
+  background-color: #2d3359;
+}
+
+.contentLink .content-item:hover {
+  background-color: #2d3359;
 }
 /*# sourceMappingURL=content.css.map */

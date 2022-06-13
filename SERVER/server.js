@@ -13,7 +13,13 @@ import expressFileupload from 'express-fileupload';
 import { connection } from "./DATABABSE/db.js";
 import router from "./routes/route.js";
 // handle cross-origin-request
-app.use(cors());
+
+app.use(
+  cors({
+    origin:true,
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(expressFileupload({useTempFiles:true}));
 app.use(cookieParser());

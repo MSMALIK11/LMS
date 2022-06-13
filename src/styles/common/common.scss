@@ -1,7 +1,7 @@
 
 
 .margin-top{
-    margin-top: 8rem;
+    margin-top: 6.75rem;
 }
 .margin-top-sm{
     margin-top: 4rem;
@@ -14,8 +14,19 @@
 .activeLectureLink{
     background-color: red;
 }
-.nav_link{
-color: red;
+
+.navActive{
+    background-color:$green;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    color: #fff;
+    & .nav-link{
+        color: #fff;
+    }
 }
 
 
@@ -28,3 +39,29 @@ color: red;
  .con-wraper.active:hover{
     color: red;
 }
+
+// 
+ .top-box-container {
+    .shadow-box {
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+    }
+    img {
+      width: 6rem;
+    }
+    .new {
+      background-color:$green;
+      color: #ffffff;
+      text-align: center;
+      width: 4rem;
+      height: 2.5rem;
+margin-top: 1.4rem;
+      line-height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }

@@ -1,38 +1,36 @@
-import Course from "../model/lessonSchema.js"
+import Course from "../model/courseSchema.js"
 import slugify from 'slugify';
 import cloudinary from "../config/cloudinary.js";
+import Lesson from "../model/lesson.js";
+// const file = req.files.image[0].tempFilePath;
 
 export const addNewCourse=async (req,res)=>{
 
     const {title,description,slug}=req.body;
-    const file=req.files.photo;
+    const file=req.files.image.tempFilePath;
+    console.log('image file',file)
 
-   
-  
+console.log('body',req.body)
     
     try {
-    const {result}=await cloudinary.v2.uploader.upload(file.tempFilePath,{folder:"courses"})
-    console.log(result )
+    const result= await cloudinary.v2.uploader.upload(file,{folder:"courses"})
+   
   
 
-if(result){
-   const course = await new Course({
+
+   const course = await Course.create({
      title,
      description,
-     slug: slugify(slug),
+     slug: slug,
      instructor: req.user._id,
-     imagepreview: result.url,
-   }).save();
+     image: { url: result.secure_url, public_id: result.public_id },
+   });
+   await course.save();
 
-   return res.status(200).json(course);
-}
-       
+   return res.status(200).json({success:true,message:"new course added"});
 
-      
-      
-        
-    } catch (error) {
- return res.json(400).json({successs:false,message:error.message})
+} catch (error) {
+ return res.status(500).json({successs:false,message:error.message})
         
     }
 
@@ -46,13 +44,17 @@ if(result){
 
 
 export const getAdminAllCourse= async(req,res)=>{ 
+    
+
+
 
     try {
         const course = await Course.find({ instructor: req.user._id }).populate(
-          "instructor"
+          "lessons instructor"
         );
+        console.log('lessons',course.lessons)
 
-        res.json(course);
+        res.json({success:true,course});
         
     } catch (error) {
         return res.status(500).json({success:false,message:error.message})
@@ -64,26 +66,89 @@ export const getAdminAllCourse= async(req,res)=>{
 // add lesson in course 
 
 export const addLesson=async(req,res)=>{
-    const{slug}=req.params;
-    const { title,link } = req.body;
-    console.log("slug is here ",slug)
+    let {id}=req.params;
+    const { title,slug,link } = req.body;
 
+  const file=req.files.video.tempFilePath;
+ 
+    const course=await Course.findById(id).populate('lessons');
+    if(!course) return;
+    // console.log('course ',course)
 
+    //    const result = await cloudinary.v2.uploader.upload(file, {
+    //      folder: "lessons",
+    //    });
+    const result=await cloudinary.v2.uploader.upload(
+      file,
+      {
+        resource_type: "video",
+        public_id: `course/lessons/${title}`,
+        chunk_size: 6000000,
+        eager: [
+          {  crop: "pad", audio_codec: "none" },
+          {
+            
+            crop: "crop",
+            gravity: "south",
+            audio_codec: "none",
+          },
+        ],
+        eager_async: true,
+        eager_notification_url: "https://mysite.example.com/notify_endpoint",
+      },
+   
+    );
+   
+ console.log('result',result)
+
+    
 
 try {
-    const course = await Course.findOneAndUpdate(
-      { slug: slugify(slug) },
-      { $addToSet: { lessons: { title: title, slug: slugify(title), link: link } } },
-      { new: true, upsert: true }
-    ).exec();
-  
 
-    console.log('lesson',course.lessons)
+    // check lesson already exist or not 
 
-    if (course) {
-      res.json({message:'lessons updated',course});
-    } 
+    let lessonExist=-1;
 
+    course.lessons.forEach(async(element,index) => {
+        if(element.title==title){
+lessonExist=index;
+element.title=title;
+element.link = { url:result.secure_url, public_id:result.public_id };
+
+
+        }
+        
+    });
+
+    if(lessonExist!==-1){
+          await course.save();
+          return res.status(200).json({
+            success: true,
+            message: "lessons updated successfully ",
+          });
+    }
+ 
+   
+    const lesson = await Lesson.create(
+      {
+           slug: slugify(title),
+           title,
+           link:{url:result.secure_url,public_id:result.public_id}
+        
+        }
+          
+    );
+
+    await lesson.save();
+    const lessonId=lesson._id;
+
+    course.lessons.push(lessonId);
+    await course.save();
+
+
+
+      res.json({success:true,message:'New lessons added'});
+   
     
 } catch (error) {
     res.json({message:error.message})
@@ -95,7 +160,40 @@ try {
 
 // delete lession from course
 
-export const deleteLessons=(req,res)=>{
-    res.json('delte course')
+export const deleteLessons=async(req,res)=>{
+
+    const  {id,lessonId}=req.params;
+
+    const course = await Course.findById(id).populate('lessons')
+
+    console.log(req.params)
+
+course.lessons.forEach((item,index)=>{
+    if (lessonId.toString() === item._id.toString()) {
+      console.log("leson found ", element);
+
+      course.lessons.splice(index,1);
+      return res.status(200).json("lessons deleted successfully")
+
+    }else{
+        console.log('lessons not found ')
+    }
+})
+await course.save();
+
+
+    res.status(200).json({success:true,message:`lessons deleted`})
+
+}
+
+// demo
+
+
+export const demo= async(req,res)=>{
+    const file=req.files.photo.tempFilePath;
+
+    console.log('files-----',file)
+        const {result}= await cloudinary.v2.uploader.upload(file,{folder:"videos"})
+        return res.json(result)
 
 }

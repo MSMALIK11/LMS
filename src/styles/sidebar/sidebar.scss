@@ -2,7 +2,8 @@
     background-color: rgb(0,7,61);
     color: #fff;
 
-height: 100vh;
+min-height: 100vh;
+height: auto;
 position: relative;
 
 & .nav-link-wraper{

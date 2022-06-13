@@ -8,6 +8,13 @@
   margin-bottom: 5rem;
   margin-top: 5rem;
 
+  .main-wraper{
+    background-color: #141414;
+    min-height: 70vh;
+    height: auto;
+
+  }
+
   & .start-btn {
     color: #fff;
     background-color: #222;
@@ -124,6 +131,7 @@
     font-size: 2rem;
   }
   .main-container {
+
    margin-top: 5rem;
     & .start-btn {
       font-size: 1.2rem;
