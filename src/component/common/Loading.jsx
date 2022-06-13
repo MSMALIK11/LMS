@@ -4,9 +4,10 @@ const Loading = () => {
   return (
     <div>
       {" "}
-      <div class="d-flex justify-content-center">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div class="loading">
+        <div class="spinner-border   text-danger" role="status">
+          <span class="visually-hidden ">Loading...</span>
+        
         </div>
       </div>
     </div>

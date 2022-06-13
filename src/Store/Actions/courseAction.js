@@ -23,7 +23,7 @@ export const getCourses = () => async (dispatch) => {
       config,
       credensials
     );
-    console.log("courses", data);
+
     dispatch({
       type: "getCourseSuccess",
       payload: data,
@@ -75,5 +75,25 @@ export const addLesson = (lesson,video ,cId) => async (dispatch) => {
     dispatch({ type: "addLessonSuccess", payload: data });
   } catch (error) {
     dispatch({type:'addLessonFail'})
+  }
+};
+
+
+//fetch single course 
+export const getSingleCourse = (courseTitle) => async (dispatch) => {
+  dispatch({ type: "getSingleCourseRequest" });
+
+  try {
+    const { data } = await axios.get(
+      `${URL}/api/course/single/${courseTitle}`,
+
+      config,
+      credensials
+    );
+   
+
+    dispatch({ type: "getSingleCourseSuccess", payload: data });
+  } catch (error) {
+    dispatch({ type: "getSingleCourseFail" });
   }
 };

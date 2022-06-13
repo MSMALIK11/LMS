@@ -28,6 +28,7 @@ export const addCourseReducer=createReducer(initialState,{
         state.loading=true;
     }
 });
+// add lessons
 export const addLessonReducer = createReducer(initialState, {
   addLessonRequest: (state) => {
     state.loading = true;
@@ -40,3 +41,23 @@ export const addLessonReducer = createReducer(initialState, {
     state.loading = true;
   },
 });
+
+
+// getSingleCourse 
+export const getSingleCourseReducers=createReducer(initialState,{
+  getSingleCourseRequest:(state)=>{
+    state.loading=true;
+  },
+  getSingleCourseSuccess:(state,action)=>{
+    state.loading=false;
+    state.singleCourse=action.payload;
+  },
+  
+  getSingleCourseFail:(state)=>{
+    state.loading=true;
+ 
+  },
+
+
+})
+

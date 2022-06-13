@@ -5,16 +5,16 @@ import Loading from '../../common/Loading'
 const AdminListOfCard = () => {
     const courseData=[1,2,3];
     const {loading,courses}=useSelector((state)=> state.courses);
-    console.log('data',loading,courses)
+    console.log('data',loading,courses);
   return (
     <div>
       <div className="row">
-        {loading ? (
+        {loading  ? (
           <Loading />
         ) : (
-          courses && courses.map((course, i) => {
+          courses && courses.course.map((course, i) => {
             return (
-              <div className="col-sm-12 col-md-6 col-lg-4">
+              <div className="col-sm-12 col-md-6 col-lg-4" key={course._id}>
                 <AdminCard course={course} />
               </div>
             );

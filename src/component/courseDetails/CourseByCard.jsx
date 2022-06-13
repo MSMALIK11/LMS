@@ -2,8 +2,11 @@ import React from "react";
 import ReactVideoPlayer from "./ReactVideoPlayer";
 import Securepayment from "./Securepayment";
 import { useNavigate } from "react-router-dom";
-const CourseByCard = ({ course, classTitle }) => {
+const CourseByCard = ({ course }) => {
   const navigate = useNavigate();
+
+  const classTitle= course?.lessons[0].title;
+  console.log('class title',classTitle)
   return (
     <>
       <div className="course-buy-container ">
@@ -17,7 +20,7 @@ const CourseByCard = ({ course, classTitle }) => {
             <button
               className="btn btn-primary start-your-course-btn"
               onClick={() =>
-                navigate(`/course/${course.title}/${classTitle[0]}`, {
+                navigate(`/course/${course.title}/${classTitle}`, {
                   state: { courses: course },
                 })
               }

@@ -99,7 +99,7 @@ export const addLesson=async(req,res)=>{
    
     );
    
- console.log('result',result)
+ 
 
     
 
@@ -195,5 +195,24 @@ export const demo= async(req,res)=>{
     console.log('files-----',file)
         const {result}= await cloudinary.v2.uploader.upload(file,{folder:"videos"})
         return res.json(result)
+
+}
+
+
+// get single course 
+
+export const getSingleCourse=async(req,res)=>{
+
+  try {
+  const singleCourse=await Course.findOne({title:req.params.title}).populate('lessons instructor');
+
+  if (!singleCourse) return;
+  return res.status(200).json({ success: true, singleCourse });
+  
+} catch (error) {
+  return res.status(500).json({message:error.message})
+  
+}
+
 
 }

@@ -60,7 +60,9 @@ const login=true;
               <Route exact path="/" element={<Navigate replace to="/home" />} />
               <Route exact path="home" element={<HomeTopBanner />} />
               <Route exact path="course" element={<HomeCard />} />
-              <Route exact path="course/:title" element={<SingleCourse />} />
+              <Route exact path="course/:courseTitle" element={<SingleCourse />} />
+             
+              <Route exact path="course/:title/:classtitle" element={<CoursePlayer />} />
              
             </Route>
 

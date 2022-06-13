@@ -1,71 +1,84 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect} from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ReactPlayer from "react-player";
 import CourseList from "../component/coursecontent/CourseList";
-import { Context } from "../component/context";
-
+import { getSingleCourse } from "../Store/Actions/courseAction";
+import { useSelector,useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import Loading from "../component/common/Loading";
 
 const CoursePlayer = () => {
   const [video, setVideo] = useState([]);
+const dispatch=useDispatch();
+const { loading, singleCourse } = useSelector((state) => state.singleCourse);
 
-  // const courses = location.state.courses;
-
+const course = singleCourse && singleCourse.singleCourse;
   let slug = useParams();
 
-  const { state, dispatch } = useContext(Context);
-  const Course = state.courseList;
+  console.log('loading',loading,slug)
 
   useEffect(() => {
-    const vlink = Course.lacture.find((lac) => lac.title == slug.classTitle);
+    const vlink = course?.lessons.find((lesson) => lesson.title===slug.classtitle);
+console.log('vlink',vlink)
+if(!video) return;
 
-    setVideo(vlink);
-  }, [slug.classTitle]);
+    setVideo(vlink.link);
+  }, [slug]);
+  useEffect(()=>{
+    getSingleCourse(slug.title)
+
+  },[dispatch,slug.classtitle])
 
   const index = 1;
 
   return (
-    <div className="course-player-container-wraper margin-top">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-12 col-12 col-lg-8 ">
-            <div className="wraper">
-              <h3>
-                Dashboard
-                <span>
-                  <FontAwesomeIcon icon={faArrowRight} /> Course
-                </span>
-                <span className="text-capitalize">
-                  <FontAwesomeIcon icon={faArrowRight} /> {Course.title}
-                </span>
-              </h3>
+    <>
+    {
+      loading ? <Loading />:
+    
+      <div className="course-player-container-wraper margin-top">
+        <div className="container-fluid ">
+          <div className="row">
+            <div className="col-sm-12 col-12 col-lg-8 ">
+              <div className="wraper">
+                <h3>
+                  Dashboard
+                  <span>
+                    <FontAwesomeIcon icon={faArrowRight} /> Course
+                  </span>
+                  <span className="text-capitalize">
+                    <FontAwesomeIcon icon={faArrowRight} /> {course?.title}
+                  </span>
+                </h3>
 
-              <div className="player-wraper mt-4 ">
-                <ReactPlayer
-                  url={video.link}
-                  className="react-player"
-                  width="100%"
-                  height="35rem"
-                  playing={false}
-                  muted={true}
-                  controls={true}
-                />
+                <div className="player-wraper mt-4 ">
+                  <ReactPlayer
+                    url={video.url}
+                    className="react-player"
+                    width="100%"
+                    height="35rem"
+                    playing={false}
+                    muted={true}
+                    controls={true}
+                  />
 
-                <h1 className="mt-4 text-capitalize">
-                  {index}. {slug.classTitle}
-                </h1>
+                  <h3 className="mt-4 text-capitalize">
+                    {index}. {slug.classtitle}
+                  </h3>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="col-sm-12 col-md-12 col-lg-4">
-            <CourseList course={Course} />
+            <div className="col-sm-12 col-md-12 col-lg-4">
+              <CourseList course={course} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      }
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ const AdminCard = ({course}) => {
   return (
     <div className="admin-card-wraper mb-4">
       <div className="shadow admin-course-card ">
-        <span className=" badge-custom-class">pending</span>
+        <span className=" badge-custom-class">Pending</span>
         <img
           src={course?.image.url}
           alt=""

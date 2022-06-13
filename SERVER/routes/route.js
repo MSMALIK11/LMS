@@ -5,6 +5,7 @@ import {
   deleteLessons,
   demo,
   getAdminAllCourse,
+  getSingleCourse,
 } from "../controller/courseController.js";
 import {
   signup,
@@ -24,6 +25,7 @@ router.route("/profile").get(isAuthenticated, currentUser);
 // course route
 
 router.route("/course/add").post(isAuthenticated, addNewCourse);
+router.route("/course/single/:title").get(isAuthenticated, getSingleCourse);
 router.route("/course/instructor").get(isAuthenticated, getAdminAllCourse);
 router.route("/course/lesson/add/:id").post(isAuthenticated, addLesson);
 // dcelete lessons
