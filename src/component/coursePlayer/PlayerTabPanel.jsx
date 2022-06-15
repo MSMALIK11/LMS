@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 import { Tabs, Tab } from "react-bootstrap";
-import ContentTab from "../TabPanel/content/ContentTab";
+import LectureList from "./content/LectureList";
+import Notes from './notes/Notes'
+import Qna from "./Qna/Qna";
+import Review from "./review/Review";
 
-const CourseList = ({ course }) => {
+const PlayerTabPanel = ({ course }) => {
   const [key, setKey] = useState("content");
 
   return (
@@ -17,21 +20,21 @@ const CourseList = ({ course }) => {
       >
         <Tab eventKey="content" title="Content">
           <div>
-            <ContentTab course={course} />
+            <LectureList course={course} />
           </div>
         </Tab>
         <Tab eventKey="notes" title="Notes">
-          <h1>notes</h1>
+          <Notes />
         </Tab>
         <Tab eventKey="qna" title="Q&A">
-          <h1>qna</h1>
+         <Qna />
         </Tab>
         <Tab eventKey="review" title="Review">
-          <h1>rewiew</h1>
+      <Review />
         </Tab>
       </Tabs>
     </div>
   );
 };
 
-export default CourseList;
+export default PlayerTabPanel;

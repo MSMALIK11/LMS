@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 import "./content.scss";
 import { NavLink,useParams} from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 
-const ContentTab = ({course}) => {
+
+const LectureList = ({course}) => {
 //  const { loading, singleCourse } = useSelector((state) => state.singleCourse);
 
 //  const course = singleCourse && singleCourse.singleCourse;
-  const [activeLink,setActiveLink]= useState('')
+  // const [activeLink,setActiveLink]= useState('')
 
   let slug = useParams();
 
 
-console.log('tab',course)
+// console.log('tab',course)
   return (
     <div className="shadow con-wraper text-white">
 <h2>Total Lecture's ({course.lessons.length} )</h2>
@@ -27,7 +27,7 @@ console.log('tab',course)
           
    
             <NavLink
-              onClick={() => setActiveLink(session)}
+            
               to={{
                 pathname: `/course/${course.title}/${session.title}`,
               }}
@@ -54,4 +54,4 @@ console.log('tab',course)
   );
 };
 
-export default ContentTab;
+export default LectureList;

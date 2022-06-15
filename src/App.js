@@ -13,8 +13,8 @@ import SinglePost from "./component/blog/SinglePost";
 
 import Profile from "./component/ProfileDashboard/Profile";
 import { Provider } from "./component/context";
-import Login from "./component/Auth/Login";
-import Signup from "./component/Auth/Signup";
+// import Login from "./component/Auth/Login";
+// import Signup from "./component/Auth/Signup";
 import { Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 
@@ -106,8 +106,7 @@ const login=true;
               <Route path="course/lesson/add/:id" element={<AddLesson />} />
             </Route>
 
-            <Route path="/login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
+          
           </Routes>
         </div>
       </Router>

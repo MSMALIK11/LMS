@@ -1,3 +1,5 @@
+// navbar design 
+// login modal  design
 header {
   background-color:rgba(255,255,255,0);
   backdrop-filter: blur(30px);
@@ -84,12 +86,11 @@ header .nav-item .navActive.nav-link{
 }
 
 // modal
-.modal {
-  display: flex;
-  justify-content: center;
+.login-modal-wraper {
+padding: 0 2rem;
 
-  width: 100%;
 
+margin-top: 7rem !important;
   & .input-wraper {
     display: flex;
     align-items: center;
@@ -137,29 +138,14 @@ header .nav-item .navActive.nav-link{
     background-color: green;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   }
-}
-.modal-backdrop {
-  z-index: 0 !important;
-}
 
-.modal .modal-content {
-  background-color: #eee;
-  width: 50rem;
 
-  & .modal-body {
-    padding: 3rem 2rem;
-
-    & .left {
-      width: 100%;
-      height: 30vh;
-    }
-  }
 
   .google-login {
     text-align: center;
     margin-top: 4rem;
     button {
-      background-color: palegoldenrod;
+      background-color:$link-hover;
       width: 18rem;
       height: 4rem;
       margin: 0.4rem 0;
@@ -171,19 +157,21 @@ header .nav-item .navActive.nav-link{
       -o-border-radius: 3rem;
       outline: none;
       text-align-last: center;
-      text-justify: a;
+    color: #fff;
 
       .bi {
         font-size: 1rem;
-        color: black;
+        color: #fff;
         margin-right: 0.8625rem;
       }
     }
   }
+
 }
 
 form .cursor {
   cursor: pointer;
+
 }
 
 

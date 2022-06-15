@@ -3,7 +3,7 @@ import React, { useState, useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ReactPlayer from "react-player";
-import CourseList from "../component/coursecontent/CourseList";
+import PlayerTabPanel from "../component/coursePlayer/PlayerTabPanel";
 import { getSingleCourse } from "../Store/Actions/courseAction";
 import { useSelector,useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -35,49 +35,49 @@ if(!video) return;
 
   return (
     <>
-    {
-      loading ? <Loading />:
-    
-      <div className="course-player-container-wraper margin-top">
-        <div className="container-fluid ">
-          <div className="row">
-            <div className="col-sm-12 col-12 col-lg-8 ">
-              <div className="wraper">
-                <h3>
-                  Dashboard
-                  <span>
-                    <FontAwesomeIcon icon={faArrowRight} /> Course
-                  </span>
-                  <span className="text-capitalize">
-                    <FontAwesomeIcon icon={faArrowRight} /> {course?.title}
-                  </span>
-                </h3>
-
-                <div className="player-wraper mt-4 ">
-                  <ReactPlayer
-                    url={video.url}
-                    className="react-player"
-                    width="100%"
-                    height="35rem"
-                    playing={false}
-                    muted={true}
-                    controls={true}
-                  />
-
-                  <h3 className="mt-4 text-capitalize">
-                    {index}. {slug.classtitle}
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="course-player-container-wraper margin-top">
+          <div className="container-fluid ">
+            <div className="row">
+              <div className="col-sm-12 col-12 col-lg-8 ">
+                <div className="wraper">
+                  <h3>
+                    Dashboard
+                    <span>
+                      <FontAwesomeIcon icon={faArrowRight} /> Course
+                    </span>
+                    <span className="text-capitalize">
+                      <FontAwesomeIcon icon={faArrowRight} /> {course?.title}
+                    </span>
                   </h3>
+
+                  <div className="player-wraper mt-4 ">
+                    <ReactPlayer
+                      url={video.url}
+                      className="react-player"
+                      width="100%"
+                      height="35rem"
+                      playing={false}
+                      muted={true}
+                      controls={true}
+                    />
+
+                    <h3 className="mt-4 text-capitalize">
+                      {index}. {slug.classtitle}
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-12 col-md-12 col-lg-4">
-              <CourseList course={course} />
+              <div className="col-sm-12 col-md-12 col-lg-4">
+                <PlayerTabPanel course={course} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      }
+      )}
     </>
   );
 };
